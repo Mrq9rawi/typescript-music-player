@@ -2,6 +2,7 @@
 // Mohammad Abdullah => N01516727
 // Mohammad Saad => N01453014
 
+
 const container: HTMLElement = document.querySelector(".container");
 const trackStatus: HTMLElement = document.querySelector(".track-status");
 const trackName: HTMLElement = document.querySelector(".track-name");
@@ -59,20 +60,20 @@ function nextSong() {
 
 function updateProgress(e) {
 	const { duration, currentTime } = e.srcElement;
-	const progressPercent = (currentTime / duration) * 100;
+	const progressPercent: number = (currentTime / duration) * 100;
 	progress.style.cssText = `width: ${progressPercent}%`;
 }
 
 function jumpTo(e) {
-	const width = this.clientWidth;
-	const clickPosition = e.offsetX;
-	const duration = music.duration;
+	const width: number = this.clientWidth;
+	const clickPosition: number = e.offsetX;
+	const duration: number = music.duration;
 
 	music.currentTime = (clickPosition / width) * duration;
 }
 
 playButton.addEventListener("click", () => {
-	const isPlaying = container.classList.contains("play");
+	const isPlaying: boolean = container.classList.contains("play");
 
 	if (isPlaying) {
 		pauseSong();
