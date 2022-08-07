@@ -1,0 +1,152 @@
+/* Global Rules Start */
+
+:root {
+	--main-border-radius: 10px;
+	
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: rgb(62, 126, 201);
+	background: linear-gradient(180deg, rgba(62, 126, 201, 1) 14%, rgba(0, 212, 255, 1) 100%);
+	background-repeat: no-repeat;
+	height: 100vh;
+	font-family: "Open Sans", sans-serif;
+}
+
+/* Global Rules End */
+
+
+
+/* Header Start */
+
+h1 {
+	margin: 150px auto 30px;
+	width: fit-content;
+	color: white;
+}
+
+/* Header End */
+/* Track Status Start */
+
+.container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 176px;
+	justify-content: flex-end;
+}
+
+.container .track-status {
+display: none;
+}
+
+.container.play .track-status {
+	text-align: right;
+	width: 350px;
+	background-color: #ffc8dd;
+	border-radius: var(--main-border-radius) var(--main-border-radius) 0 0;
+	padding: 15px 5px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	z-index: 1;
+}
+
+.container.play .track-status .track-name {
+	margin-bottom: 10px;
+	width: 70%;
+	color: #3e7ec9;
+	text-align: left;
+}
+
+.container.play .track-status .progress {
+	width: 70%;
+	height: 5px;
+	background-color: white;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.container.play .track-status .progress div {
+	/* width: 70%; */
+	height: 100%;
+	background-color: #cdb4db;
+	border-radius: 5px;
+}
+
+/* Track Status End */
+/* Music Player Start */
+
+.container .music-player {
+	width: 400px;
+	background-color: #ffafcc;
+	border-radius: var(--main-border-radius);
+	padding: 0 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	box-shadow: #3e7ec93d 0px 4px 20px;
+	z-index: 2;
+}
+
+.container .img {
+	position: relative;
+	bottom: 20px;
+}
+
+.container .img {
+	animation: rotate 10s linear infinite;
+	animation-play-state: paused;
+}
+
+.container.play .img {
+	animation-play-state: running;
+}
+
+.container .img::before {
+	content: "";
+	width: 20px;
+	height: 20px;
+	background-color: white;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.container .music-player .img img {
+	border-radius: 50%;
+}
+
+.container .music-player .media-control {
+	flex: 1;
+	display: flex;
+	justify-content: space-around;
+}
+
+.container .music-player .media-control i {
+	color: #3e7ec9;
+	cursor: pointer;
+	width: 32px;
+	height: 32px;
+	text-align: center;
+}
+
+/* Music Player End */
+/* Animation Start */
+
+@keyframes rotate {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/* Animation End */
